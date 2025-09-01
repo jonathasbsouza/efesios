@@ -1,9 +1,14 @@
-
 import React from 'react';
 import { Routes, Route, Navigate, NavLink, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import matter from 'gray-matter';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Buffer } from 'buffer';
+
+// Make Buffer globally available for gray-matter
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 // Raw markdown content with frontmatter (simulating imported .md files)
 const rawMarkdownFiles = {
