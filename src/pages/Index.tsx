@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HashRouter, Routes, Route, Navigate, NavLink, useParams } from 'react-router-dom';
+import { Routes, Route, Navigate, NavLink, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 // Mock lesson data
@@ -172,43 +172,30 @@ const LessonDisplay = () => {
   );
 };
 
-// Main App Component
-const CourseApp = () => {
+// Main Course Page Component
+const Index = () => {
   // Find the first available lesson for default redirect
   const firstAvailableLesson = lessonsData.find(lesson => lesson.status === 'available');
 
   return (
-    <HashRouter>
-      <div className="flex min-h-screen bg-gray-100">
-        <Sidebar />
-        
-        <Routes>
-          <Route 
-            path="/" 
-            element={
-              firstAvailableLesson ? 
-                <Navigate to={`/lessons/${firstAvailableLesson.slug}`} replace /> :
-                <div className="flex-1 flex items-center justify-center">
-                  <p className="text-gray-600">No lessons available at this time.</p>
-                </div>
-            } 
-          />
-          <Route path="/lessons/:slug" element={<LessonDisplay />} />
-          <Route 
-            path="*" 
-            element={
-              <div className="flex-1 flex items-center justify-center bg-gray-50">
-                <div className="text-center">
-                  <h1 className="text-2xl font-bold text-gray-900 mb-4">Page Not Found</h1>
-                  <p className="text-gray-600">The requested page could not be found.</p>
-                </div>
+    <div className="flex min-h-screen bg-gray-100">
+      <Sidebar />
+      
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            firstAvailableLesson ? 
+              <Navigate to={`/lessons/${firstAvailableLesson.slug}`} replace /> :
+              <div className="flex-1 flex items-center justify-center">
+                <p className="text-gray-600">No lessons available at this time.</p>
               </div>
-            } 
-          />
-        </Routes>
-      </div>
-    </HashRouter>
+          } 
+        />
+        <Route path="/lessons/:slug" element={<LessonDisplay />} />
+      </Routes>
+    </div>
   );
 };
 
-export default CourseApp;
+export default Index;
