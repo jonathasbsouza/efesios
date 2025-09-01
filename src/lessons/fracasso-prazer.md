@@ -1,25 +1,25 @@
 ---
 title: 'O fracasso da busca do prazer em satisfazer a vida secular (Ec 2.1-11)'
 order: 4
-status: 'unavailable'
+status: 'available'
 googleSlidesEmbedUrl: ''
 ---
 
-## 📝 To Memorize
-"To every thing there is a season, and a time to every purpose under the heaven."
-**Ecclesiastes 3:1 KJV**
+## 🫀 Para memorizar
+'Tudo que desejei, busquei e consegui. Não me neguei prazer algum. No trabalho árduo, encontrei grande prazer, a recompensa por meus esforços.' Eclesiastes 2:10 NVT
 
-## 🔑 Keywords
-- **zeman:** "time, season" - Appointed time for specific activities
-- **eth:** "time" - The right or proper time
-- **chephets:** "purpose, delight" - Divine intention behind timing
+## 🔑 Palavras-chave
+- **śimḥā(h)**, "alegria, júbilo"
+- **siḵlûṯ**, "loucura, insensatez"
+- **mǎʿǎśě(h)** "obras"
 
-## 📚 Supplementary Material
-- The Wisdom of Timing: [https://www.desiringgod.org/articles/theres-a-time-for-everything](https://www.desiringgod.org/articles/theres-a-time-for-everything)
-- Ecclesiastes 3 Commentary: [https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ecclesiastes-3-1.html](https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ecclesiastes-3-1.html)
+## 📚 Material complementar
+- [O que é hedonismo cristão](https://www.youtube.com/watch?v=oxjuxWNUHo8&ab_channel=EscolaCharlesSpurgeon)
+- [Plena satisfação em Deus](https://www.amazon.com.br/Plena-Satisfa%C3%A7%C3%A3o-Deus-Glorificado-Satisfeita/dp/8599145630/)
+- [Um coração em busca de repouso](https://theinvisiblecollege.com.br/confissoes-um-coracao-em-busca-de-repouso/)
+- [Confissões, Santo Agostinho](https://www.amazon.com.br/confissoes-vol-capa-santo-agostinho/dp/6589845867/)
 
-## 🎬 In Culture
-The Byrds immortalized this passage in their hit song "Turn! Turn! Turn!"
-
-## ✅ To-Do
-This lesson will be available next week. Check back soon!
+## 🌎 Na cultura
+- [O Silêncio das Estrelas, Lenine (Nessa versão fantástica da Vanessa Moreno)](https://www.youtube.com/watch?v=t101wpXxYE0)
+- [O apanhador no campo de centeio, J.D. Salinger](https://www.amazon.com.br/apanhador-no-campo-centeio/dp/6580309032)
+- [Confissões, Projeto Sola](https://www.youtube.com/watch?v=WZDbCw7Y7jg&list=RDWZDbCw7Y7jg&start_radio=1&ab_channel=ProjetoSola)

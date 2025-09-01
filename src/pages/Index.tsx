@@ -103,6 +103,13 @@ const NavSidebar = () => {
 const LessonDisplay = () => {
   const { slug } = useParams();
   const lesson = lessonsData.find((l) => l.slug === slug);
+  const viewportRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (viewportRef.current) {
+      viewportRef.current.scrollTop = 0;
+    }
+  }, [slug]);
 
   if (!lesson) {
     return (
@@ -134,7 +141,10 @@ const LessonDisplay = () => {
 
   return (
     <div className="flex-1 bg-gray-50">
-      <ScrollArea className="h-full">
+      <ScrollArea
+        className="h-full flex justify-center"
+        viewportRef={viewportRef}
+      >
         <div className="max-w-4xl mx-auto p-8 animate-fade-in">
           <h1 className="lesson-title">{lesson.title}</h1>
           <div className="slides-container mb-12">
@@ -199,7 +209,7 @@ const Index = () => {
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen w-full bg-muted/40">
+      <div className="flex min-h-screen w-full bg-muted/40 justify-center">
         <NavSidebar />
         <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
           <Header />
