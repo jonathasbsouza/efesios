@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Routes, Route, Navigate, NavLink, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
@@ -10,95 +11,17 @@ if (typeof window !== 'undefined') {
   window.Buffer = Buffer;
 }
 
-// Raw markdown content with frontmatter (simulating imported .md files)
-const rawMarkdownFiles = {
-  'introduction-to-ecclesiastes': `---
-title: '1. Introduction to Ecclesiastes'
-order: 1
-status: 'available'
-googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000'
----
-
-## 📝 To Memorize
-"A generation goes, and a generation comes, but the earth remains forever. The sun rises, and the sun goes down, and hastens to the place where it rises."
-
-**Ecclesiastes 1:4-5 ESV**
-
-## 🔑 Keywords
-- **hevel:** "vanity, breath, vapor" - The central concept of Ecclesiastes, describing the fleeting nature of earthly pursuits
-- **yitron:** "profit, advantage" - What lasting benefit can be gained from human endeavor?
-- **tahat hashamesh:** "under the sun" - The perspective of life viewed from earthly, temporal concerns
-
-## 📚 Supplementary Material
-- An overview of Ecclesiastes: [https://www.youtube.com/watch?v=E-nMyBL46bQ](https://www.youtube.com/watch?v=E-nMyBL46bQ)
-- Ecclesiastes and Postmodernism: [https://relevantmagazine.com/faith/what-ecclesiastes-can-teach-us-about-post-modernism/](https://relevantmagazine.com/faith/what-ecclesiastes-can-teach-us-about-post-modernism/)
-
-## 🎬 In Culture
-The Byrds, "Turn! Turn! Turn!": [https://www.youtube.com/watch?v=pKP4cfU28vM](https://www.youtube.com/watch?v=pKP4cfU28vM)
-
-## ✅ To-Do
-Leave 3-4 comments on the document below analyzing the themes of meaninglessness in modern life.
-[https://docs.google.com/document/d/12345/edit](https://docs.google.com/document/d/12345/edit)`,
-
-  'vanity-of-vanities': `---
-title: '2. Vanity of Vanities'
-order: 2
-status: 'available'
-googleSlidesEmbedUrl: ''
----
-
-## 📝 To Memorize
-"Vanity of vanities, says the Preacher, vanity of vanities! All is vanity."
-
-**Ecclesiastes 1:2 ESV**
-
-## 🔑 Keywords
-- **hebel hebalim:** "vanity of vanities" - The superlative form emphasizing ultimate meaninglessness
-- **qohelet:** "preacher, gatherer" - The title of the speaker in Ecclesiastes
-- **kol:** "all, everything" - The comprehensive scope of the vanity
-
-## 📚 Supplementary Material
-- The Philosophy of Ecclesiastes: [https://www.thegospelcoalition.org/article/philosophy-ecclesiastes/](https://www.thegospelcoalition.org/article/philosophy-ecclesiastes/)
-- Ecclesiastes in Jewish Thought: [https://www.myjewishlearning.com/article/ecclesiastes-qohelet/](https://www.myjewishlearning.com/article/ecclesiastes-qohelet/)
-
-## 🎬 In Culture
-Pink Floyd's "Time" echoes Ecclesiastical themes: [https://www.youtube.com/watch?v=JwYX52BP2Sk](https://www.youtube.com/watch?v=JwYX52BP2Sk)
-
-## ✅ To-Do
-Write a 500-word reflection on how the concept of "hebel" applies to modern consumer culture.
-[https://docs.google.com/document/d/67890/edit](https://docs.google.com/document/d/67890/edit)`,
-
-  'time-and-seasons': `---
-title: '3. A Time for Everything'
-order: 3
-status: 'unavailable'
-googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000'
----
-
-## 📝 To Memorize
-"To every thing there is a season, and a time to every purpose under the heaven."
-
-**Ecclesiastes 3:1 KJV**
-
-## 🔑 Keywords
-- **zeman:** "time, season" - Appointed time for specific activities
-- **eth:** "time" - The right or proper time
-- **chephets:** "purpose, delight" - Divine intention behind timing
-
-## 📚 Supplementary Material
-- The Wisdom of Timing: [https://www.desiringgod.org/articles/theres-a-time-for-everything](https://www.desiringgod.org/articles/theres-a-time-for-everything)
-- Ecclesiastes 3 Commentary: [https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ecclesiastes-3-1.html](https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ecclesiastes-3-1.html)
-
-## 🎬 In Culture
-The Byrds immortalized this passage in their hit song "Turn! Turn! Turn!"
-
-## ✅ To-Do
-This lesson will be available next week. Check back soon!`
-};
+// Import markdown files using Vite's import.meta.glob
+const markdownModules = import.meta.glob('../lessons/*.md', { 
+  as: 'raw',
+  eager: true 
+});
 
 // Loader function to parse markdown files with frontmatter
 const loadLessonsFromMarkdown = () => {
-  const lessons = Object.entries(rawMarkdownFiles).map(([slug, rawContent]) => {
+  const lessons = Object.entries(markdownModules).map(([path, rawContent]) => {
+    // Extract slug from file path
+    const slug = path.split('/').pop()?.replace('.md', '') || '';
     const { data, content } = matter(rawContent);
     
     return {
