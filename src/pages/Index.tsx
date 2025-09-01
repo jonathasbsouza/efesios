@@ -1,16 +1,20 @@
+
 import React from 'react';
 import { Routes, Route, Navigate, NavLink, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import matter from 'gray-matter';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
-// Mock lesson data
-const lessonsData = [
-  {
-    slug: 'introduction-to-ecclesiastes',
-    title: '1. Introduction to Ecclesiastes',
-    status: 'available',
-    googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000',
-    content: `## 📝 To Memorize
+// Raw markdown content with frontmatter (simulating imported .md files)
+const rawMarkdownFiles = {
+  'introduction-to-ecclesiastes': `---
+title: '1. Introduction to Ecclesiastes'
+order: 1
+status: 'available'
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000'
+---
+
+## 📝 To Memorize
 "A generation goes, and a generation comes, but the earth remains forever. The sun rises, and the sun goes down, and hastens to the place where it rises."
 
 **Ecclesiastes 1:4-5 ESV**
@@ -29,14 +33,16 @@ The Byrds, "Turn! Turn! Turn!": [https://www.youtube.com/watch?v=pKP4cfU28vM](ht
 
 ## ✅ To-Do
 Leave 3-4 comments on the document below analyzing the themes of meaninglessness in modern life.
-[https://docs.google.com/document/d/12345/edit](https://docs.google.com/document/d/12345/edit)`
-  },
-  {
-    slug: 'vanity-of-vanities',
-    title: '2. Vanity of Vanities',
-    status: 'available',
-    googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000',
-    content: `## 📝 To Memorize
+[https://docs.google.com/document/d/12345/edit](https://docs.google.com/document/d/12345/edit)`,
+
+  'vanity-of-vanities': `---
+title: '2. Vanity of Vanities'
+order: 2
+status: 'available'
+googleSlidesEmbedUrl: ''
+---
+
+## 📝 To Memorize
 "Vanity of vanities, says the Preacher, vanity of vanities! All is vanity."
 
 **Ecclesiastes 1:2 ESV**
@@ -55,14 +61,16 @@ Pink Floyd's "Time" echoes Ecclesiastical themes: [https://www.youtube.com/watch
 
 ## ✅ To-Do
 Write a 500-word reflection on how the concept of "hebel" applies to modern consumer culture.
-[https://docs.google.com/document/d/67890/edit](https://docs.google.com/document/d/67890/edit)`
-  },
-  {
-    slug: 'time-and-seasons',
-    title: '3. A Time for Everything',
-    status: 'unavailable',
-    googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000',
-    content: `## 📝 To Memorize
+[https://docs.google.com/document/d/67890/edit](https://docs.google.com/document/d/67890/edit)`,
+
+  'time-and-seasons': `---
+title: '3. A Time for Everything'
+order: 3
+status: 'unavailable'
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000'
+---
+
+## 📝 To Memorize
 "To every thing there is a season, and a time to every purpose under the heaven."
 
 **Ecclesiastes 3:1 KJV**
@@ -81,8 +89,29 @@ The Byrds immortalized this passage in their hit song "Turn! Turn! Turn!"
 
 ## ✅ To-Do
 This lesson will be available next week. Check back soon!`
-  }
-];
+};
+
+// Loader function to parse markdown files with frontmatter
+const loadLessonsFromMarkdown = () => {
+  const lessons = Object.entries(rawMarkdownFiles).map(([slug, rawContent]) => {
+    const { data, content } = matter(rawContent);
+    
+    return {
+      slug,
+      title: data.title,
+      order: data.order,
+      status: data.status,
+      googleSlidesEmbedUrl: data.googleSlidesEmbedUrl,
+      content
+    };
+  });
+
+  // Sort by order field from frontmatter
+  return lessons.sort((a, b) => a.order - b.order);
+};
+
+// Load and parse the lessons data
+const lessonsData = loadLessonsFromMarkdown();
 
 // Sidebar Navigation Component
 const Sidebar = () => {
