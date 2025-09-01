@@ -19,10 +19,18 @@ const markdownModules = import.meta.glob('../lessons/*.md', {
 
 // Loader function to parse markdown files with frontmatter
 const loadLessonsFromMarkdown = () => {
+  console.log('Loading lessons from markdown files...');
+  console.log('Available markdown modules:', markdownModules);
+  
   const lessons = Object.entries(markdownModules).map(([path, rawContent]) => {
+    console.log('Processing file:', path);
+    console.log('Raw content length:', rawContent.length);
+    
     // Extract slug from file path
     const slug = path.split('/').pop()?.replace('.md', '') || '';
     const { data, content } = matter(rawContent);
+    
+    console.log('Parsed frontmatter for', slug, ':', data);
     
     return {
       slug,
@@ -35,7 +43,10 @@ const loadLessonsFromMarkdown = () => {
   });
 
   // Sort by order field from frontmatter
-  return lessons.sort((a, b) => a.order - b.order);
+  const sortedLessons = lessons.sort((a, b) => a.order - b.order);
+  console.log('Final lessons data:', sortedLessons);
+  
+  return sortedLessons;
 };
 
 // Load and parse the lessons data
@@ -151,6 +162,9 @@ const LessonDisplay = () => {
 const Index = () => {
   // Find the first available lesson for default redirect
   const firstAvailableLesson = lessonsData.find(lesson => lesson.status === 'available');
+  
+  console.log('First available lesson:', firstAvailableLesson);
+  console.log('All lessons:', lessonsData);
 
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -163,7 +177,10 @@ const Index = () => {
             firstAvailableLesson ? 
               <Navigate to={`/lessons/${firstAvailableLesson.slug}`} replace /> :
               <div className="flex-1 flex items-center justify-center">
-                <p className="text-gray-600">No lessons available at this time.</p>
+                <div className="text-center">
+                  <p className="text-gray-600">No lessons available at this time.</p>
+                  <p className="text-sm text-gray-400 mt-2">Debug: Found {lessonsData.length} lessons total</p>
+                </div>
               </div>
           } 
         />
