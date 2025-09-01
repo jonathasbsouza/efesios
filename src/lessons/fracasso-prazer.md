@@ -1,14 +1,12 @@
-
 ---
-title: '3. A Time for Everything'
-order: 3
+title: 'O fracasso da busca do prazer em satisfazer a vida secular (Ec 2.1-11)'
+order: 4
 status: 'unavailable'
-googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQY8xVxN-5K9Q3ZQ4kY8X2YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3YXZ3/embed?start=false&loop=false&delayms=3000'
+googleSlidesEmbedUrl: ''
 ---
 
 ## 📝 To Memorize
 "To every thing there is a season, and a time to every purpose under the heaven."
-
 **Ecclesiastes 3:1 KJV**
 
 ## 🔑 Keywords

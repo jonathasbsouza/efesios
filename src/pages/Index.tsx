@@ -41,6 +41,7 @@ const loadLessonsFromMarkdown = () => {
       content
     };
   });
+  console.log(lessons);
 
   // Sort by order field from frontmatter
   const sortedLessons = lessons.sort((a, b) => a.order - b.order);
@@ -55,22 +56,22 @@ const lessonsData = loadLessonsFromMarkdown();
 // Sidebar Navigation Component
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-slate-800 min-h-screen shadow-xl flex flex-col">
+    <div className="w-96 bg-slate-800 min-h-screen shadow-xl flex flex-col">
       <div className="p-6 border-b border-slate-700 flex-shrink-0">
-        <h1 className="text-xl font-bold text-white">Course Platform</h1>
-        <p className="text-slate-400 text-sm mt-1">Ecclesiastes Study</p>
+        <h1 className="text-xl font-bold text-white">Vapor</h1>
+        <p className="text-slate-400 text-sm mt-1">Estudos bíblicos em Eclesiastes</p>
       </div>
       
       <ScrollArea className="flex-1">
         <nav className="mt-6">
           <div className="px-6 py-2">
-            <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Lessons</h2>
+            <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Aulas</h2>
           </div>
           
           {lessonsData.map((lesson) => (
             <NavLink
               key={lesson.slug}
-              to={`/lessons/${lesson.slug}`}
+              to={`/aula/${lesson.slug}`}
               className={({ isActive }) => {
                 if (lesson.status === 'unavailable') {
                   return 'nav-link nav-link-unavailable';
@@ -81,7 +82,7 @@ const Sidebar = () => {
               <div className="flex items-center justify-between">
                 <span>{lesson.title}</span>
                 {lesson.status === 'unavailable' && (
-                  <span className="text-xs bg-slate-600 px-2 py-1 rounded">Soon</span>
+                  <span className="text-xs bg-slate-600 px-2 py-1 rounded">Em breve</span>
                 )}
               </div>
             </NavLink>
@@ -101,8 +102,8 @@ const LessonDisplay = () => {
     return (
       <div className="flex-1 flex items-center justify-center bg-gray-50">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Lesson Not Found</h1>
-          <p className="text-gray-600">The requested lesson could not be found.</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Aula não encontrada</h1>
+          <p className="text-gray-600">Não foi possível encontrar a aula especificada.</p>
         </div>
       </div>
     );
@@ -112,8 +113,8 @@ const LessonDisplay = () => {
     return (
       <div className="flex-1 flex items-center justify-center bg-gray-50">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Lesson Coming Soon</h1>
-          <p className="text-gray-600">This lesson is not yet available. Please check back later.</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Em breve</h1>
+          <p className="text-gray-600">Esta aula ainda não está disponível. Verifique novamente mais tarde.</p>
         </div>
       </div>
     );
@@ -141,8 +142,8 @@ const LessonDisplay = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
-                  <p className="text-gray-500 font-medium">No slides available</p>
-                  <p className="text-gray-400 text-sm">Slides will be added soon</p>
+                  <p className="text-gray-500 font-medium">Nenhum slide disponível</p>
+                  <p className="text-gray-400 text-sm">A apresentação será disponibilizada em breve.</p>
                 </div>
               </div>
             )}
@@ -175,7 +176,7 @@ const Index = () => {
           path="/" 
           element={
             firstAvailableLesson ? 
-              <Navigate to={`/lessons/${firstAvailableLesson.slug}`} replace /> :
+              <Navigate to={`/aula/${firstAvailableLesson.slug}`} replace /> :
               <div className="flex-1 flex items-center justify-center">
                 <div className="text-center">
                   <p className="text-gray-600">No lessons available at this time.</p>
@@ -184,7 +185,7 @@ const Index = () => {
               </div>
           } 
         />
-        <Route path="/lessons/:slug" element={<LessonDisplay />} />
+        <Route path="/aula/:slug" element={<LessonDisplay />} />
       </Routes>
     </div>
   );
