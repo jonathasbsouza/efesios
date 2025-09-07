@@ -2,7 +2,7 @@
 title: 'O fracasso da busca do prazer em satisfazer a vida secular (Ec 2.1-11)'
 order: 4
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTQ019oOcvrG4_2vvnRKBmh4sy-rKTZObJcRmH85NdHq87tsQgRDyc5kdzlcHt3ddcg0rfmx6QcATc8/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar
