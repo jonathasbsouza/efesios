@@ -203,9 +203,9 @@ const Header = () => (
 );
 
 const Index = () => {
-  const firstAvailableLesson = lessonsData.find(
-    (lesson) => lesson.status === 'available'
-  );
+  const lastAvailableLesson = [...lessonsData]
+    .reverse()
+    .find((lesson) => lesson.status === 'available');
 
   return (
     <SidebarProvider>
@@ -217,9 +217,9 @@ const Index = () => {
               <Route
                 path="/"
                 element={
-                  firstAvailableLesson ? (
+                  lastAvailableLesson ? (
                     <Navigate
-                      to={`/aula/${firstAvailableLesson.slug}`}
+                      to={`/aula/${lastAvailableLesson.slug}`}
                       replace
                     />
                   ) : (
