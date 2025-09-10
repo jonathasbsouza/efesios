@@ -10,8 +10,8 @@ import {
   SidebarHeader,
   SidebarContent,
   SidebarTrigger,
-  SidebarInset,
   useSidebar,
+  SidebarInset,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
@@ -211,9 +211,8 @@ const Index = () => {
     <SidebarProvider>
       <div className="flex min-h-screen w-full bg-muted/40 justify-center">
         <NavSidebar />
-        <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+        <SidebarInset>
           <Header />
-          <SidebarInset>
             <Routes>
               <Route
                 path="/"
@@ -224,7 +223,7 @@ const Index = () => {
                       replace
                     />
                   ) : (
-                    <div className="flex-1 flex items-center justify-center">
+                    <div className="flex-1 flex min-w-40 items-center justify-center">
                       <div className="text-center">
                         <p className="text-gray-600">
                           No lessons available at this time.
@@ -239,8 +238,7 @@ const Index = () => {
               />
               <Route path="/aula/:slug" element={<LessonDisplay />} />
             </Routes>
-          </SidebarInset>
-        </div>
+        </SidebarInset>
       </div>
     </SidebarProvider>
   );
