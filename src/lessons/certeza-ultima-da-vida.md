@@ -2,7 +2,7 @@
 title: 'A certeza última da vida (Ec. 2.12-23)'
 order: 5
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTW5iXbOHXHUOGq9QfzIt_B30pbCQyMf3_UJt6l3PBvc3zngXbmZc4eK2U__Urf1Ud6JJtzsL30ZRg9/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar
