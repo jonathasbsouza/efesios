@@ -2,7 +2,7 @@
 title: 'Julgamento (Ec. 3.16-19)'
 order: 8
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTRtQpozWv7_ru-Or3ExMU8Ubba007zZEHh84zmQtZb8cy7syZyPcgKywGMWO8JoG3NQxVWtnMp10TJ/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar
@@ -24,7 +24,6 @@ googleSlidesEmbedUrl: ''
 ## 🌎 Na cultura
 ### Livros
 - [Refrão da Fome, J.M.F. Le Clezio](https://www.amazon.com.br/Refr%C3%A3o-Fome-J-M-G-Clezio/dp/8575038524/)
-- []()
 
 ### Músicas
 - [Juízo Final, Nelson Cavaquinho](https://www.youtube.com/watch?v=lU8j7lj4RdU)
