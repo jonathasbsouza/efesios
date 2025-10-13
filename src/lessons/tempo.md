@@ -2,7 +2,7 @@
 title: 'Tempo (Ec. 3.1-15)'
 order: 7
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vR6RPeySpZ2Wk94Lg-twh1IxALolxwqjaqgMPT2nm_ZM4xm2aGISj3eAYhwfhh74HfVBqDAx6Akj9IU/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar

@@ -1,7 +1,7 @@
 ---
 title: 'Andando juntos (Ec. 4.7-12)'
 order: 10
-status: 'unavailable'
+status: 'available'
 googleSlidesEmbedUrl: ''
 ---
 
@@ -35,4 +35,4 @@ googleSlidesEmbedUrl: ''
 ### Filmes & Séries
 - [Luca](https://www.youtube.com/watch?v=E7_4ZUpyoWM)
 - [Clube dos Cinco](https://www.youtube.com/watch?v=EmqkaxOw6_o)
-- []()
+- [O Senhor dos Anéis: A Sociedade do Anel](https://www.youtube.com/watch?v=0i86oM1nHjM)

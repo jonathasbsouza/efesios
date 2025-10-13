@@ -2,7 +2,7 @@
 title: 'Opressão e disputas (Ec. 4.1-6)'
 order: 9
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSMQyI8lorO8tHuOR9h-dmf1Vb9QRxNJB3CzIvmUrLAIjr4aC202fDspI8sqUOwumVj047gLJdd-4_O/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar

@@ -1,5 +1,5 @@
 ---
-title: 'Julgamento (Ec. 3.16-19)'
+title: 'Julgamento (Ec. 3.16-22)'
 order: 8
 status: 'available'
 googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTRtQpozWv7_ru-Or3ExMU8Ubba007zZEHh84zmQtZb8cy7syZyPcgKywGMWO8JoG3NQxVWtnMp10TJ/pubembed?start=false&loop=false'
