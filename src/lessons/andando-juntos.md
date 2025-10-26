@@ -2,7 +2,7 @@
 title: 'Andando juntos (Ec. 4.7-12)'
 order: 10
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSwwE8DHv3MPBJf-m0fQ3uC2RvpIaSBcKToLrmNy6oVNRCIginT0GTXdU0s6KLHCzokjc1Qnc50HQrm/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar

@@ -2,7 +2,7 @@
 title: 'A futilidade do poder (Ec. 4.13-16)'
 order: 11
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vT3_uldafoqpOA1ofnZQBMpHAKGK9KjENye9tMWAbB17f0tVyLD9ZibhGXPj1Nv07ZVD2ZYEXlTRa4N/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar
