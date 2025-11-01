@@ -83,10 +83,10 @@ const NavSidebar = () => {
                   }`;
                 }}
               >
-                <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 justify-between">
                   <span>{lesson.title}</span>
                   {lesson.status === 'unavailable' && (
-                    <span className="text-xs bg-slate-600 px-2 py-1 rounded">
+                    <span className="text-xs bg-slate-600 whitespace-nowrap px-2 py-1 rounded">
                       Em breve
                     </span>
                   )}
