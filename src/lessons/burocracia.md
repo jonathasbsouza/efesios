@@ -1,7 +1,7 @@
 ---
 title: 'Burocracia (Ec. 5.8-9)'
 order: 13
-status: 'unavailable'
+status: 'available'
 googleSlidesEmbedUrl: ''
 ---
 
