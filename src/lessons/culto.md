@@ -2,7 +2,7 @@
 title: 'Culto (Ec. 5.1-7)'
 order: 12
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQrwPiyp4eQDBsKZbV6iC44f-t8GRsNtCVeJ9xmL5WEywDCKRSKPKXuY2QqaWMWogWzthlLn1HLA5Dz/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar
