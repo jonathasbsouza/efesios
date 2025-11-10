@@ -1,7 +1,7 @@
 ---
 title: 'Riquezas (Ec. 5.10-17)'
 order: 14
-status: 'unavailable'
+status: 'available'
 googleSlidesEmbedUrl: ''
 ---
 

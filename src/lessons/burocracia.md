@@ -2,7 +2,7 @@
 title: 'Burocracia (Ec. 5.8-9)'
 order: 13
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRoA3wycJQoyxh_D0Wv7mEUrallyaHFpetwoS6x666wNcMgi_4K1_vPc4TzzKvCWPZPo59X3saKeTxM/pubembed?start=false&loop=false'
 ---
 
 # 🫀 Para memorizar
