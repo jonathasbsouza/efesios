@@ -6,7 +6,7 @@ googleSlidesEmbedUrl: ''
 ---
 
 ## 🫀 Para memorizar
-'Um homem sozinho pode ser vencido, mas dois conseguem defender-se. Um cordão de três dobras não se rompe com facilidade.' Eclesiastes 4:12 NVT
+'O homem sai nu do ventre da sua mãe e, como vem, assim ele vai. De todo o trabalho em que se esforçou, nada levará consigo.' Eclesiastes 5:15 NVI
 
 ## ✏️ Atividade
 [https://forms.gle/28VpLrxESmKAUQn77](https://forms.gle/28VpLrxESmKAUQn77)
