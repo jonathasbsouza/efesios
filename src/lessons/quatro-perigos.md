@@ -2,7 +2,7 @@
 title: 'Quatro perigos (Ec. 7.7-10)'
 order: 19
 status: 'unavailable'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRSbSPJNGmSk100caWkWmmmpxyxUI8JwHkLLvkDYnc7w93VAqCU71RGymf_0uz11ByDxFn0wUFdVAhu/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar

@@ -2,7 +2,7 @@
 title: 'Riquezas (Ec. 5.10-17)'
 order: 14
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vR2B1gcDn3fxHrGCFNqgk7IO5VvErZR3oTFNjVLcXR1uLJTPVViokI1Bdn0uQXV2QCozlIkB9hBy_Ej/pubembed?start=false&loop=false'
 ---
 
 ## 🫀 Para memorizar
