@@ -2,7 +2,7 @@
 title: 'O controle de Deus nos extremos da vida (Ec. 7.13-18)'
 order: 21
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vR6Hc7gINMoTcR2ol665tGiEkgLz_Jr7rNVtxf6rA2_jJo4fvx2R84V4iYzu86CQXrascQKHH-pWrnc/pubembed?start=false&loop=false'
 ---
 
 ## ✏️ Atividade
