@@ -1,5 +1,5 @@
 ---
-description: Adicionar nova aula ao site Eclesiastes (Vapor)
+description: Adicionar nova aula ao site de estudos em Efésios
 ---
 Este workflow ajuda a processar links de slides, vídeos ou textos fornecidos pelo usuário para compor uma nova aula no site.
 

@@ -55,17 +55,19 @@ const NavSidebar = () => {
 
   return (
     <Sidebar>
-      <SidebarHeader className="p-6 border-b border-slate-700">
-        <h1 className="text-xl font-bold text-white">Vapor</h1>
-        <p className="text-slate-400 text-sm mt-1">
-          Estudos bíblicos em Eclesiastes
+      <SidebarHeader className="p-6 border-b border-border">
+        <h1 className="text-lg font-bold text-foreground tracking-wide uppercase">
+          Pratique a Ressurreição
+        </h1>
+        <p className="text-sm mt-2 font-mono lowercase text-[hsl(var(--lesson-accent))]">
+          estudos na carta aos Efésios
         </p>
       </SidebarHeader>
       <SidebarContent className="p-0">
         <ScrollArea className="flex-1">
           <nav className="mt-6">
             <div className="px-6 py-2">
-              <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+              <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Aulas
               </h2>
             </div>
@@ -86,7 +88,7 @@ const NavSidebar = () => {
                 <div className="flex items-center gap-2 justify-between">
                   <span>{lesson.title}</span>
                   {lesson.status === 'unavailable' && (
-                    <span className="text-xs bg-slate-600 whitespace-nowrap px-2 py-1 rounded">
+                    <span className="text-xs bg-secondary text-muted-foreground whitespace-nowrap px-2 py-1 rounded border border-border">
                       Em breve
                     </span>
                   )}
@@ -113,12 +115,12 @@ const LessonDisplay = () => {
 
   if (!lesson) {
     return (
-      <div className="flex-1 flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+      <div className="flex-1 flex items-center justify-center bg-background">
+        <div className="text-center px-4">
+          <h1 className="text-2xl font-bold text-foreground mb-4">
             Aula não encontrada
           </h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Não foi possível encontrar a aula especificada.
           </p>
         </div>
@@ -128,10 +130,10 @@ const LessonDisplay = () => {
 
   if (lesson.status === 'unavailable') {
     return (
-      <div className="flex-1 flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Em breve</h1>
-          <p className="text-gray-600">
+      <div className="flex-1 flex items-center justify-center bg-background">
+        <div className="text-center px-4">
+          <h1 className="text-2xl font-bold text-foreground mb-4">Em breve</h1>
+          <p className="text-muted-foreground">
             Esta aula ainda não está disponível. Verifique novamente mais tarde.
           </p>
         </div>
@@ -140,7 +142,7 @@ const LessonDisplay = () => {
   }
 
   return (
-    <div className="flex-1 bg-gray-50">
+    <div className="flex-1 bg-background">
       <ScrollArea
         className="h-full flex justify-center"
         viewportRef={viewportRef}
@@ -155,9 +157,9 @@ const LessonDisplay = () => {
                 title={`${lesson.title} Slides`}
               />
             ) : (
-              <div className="w-full aspect-video bg-gray-200 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
-                <div className="text-center">
-                  <div className="text-gray-400 mb-2">
+              <div className="w-full aspect-video bg-muted/40 rounded-lg flex items-center justify-center border-2 border-dashed border-border">
+                <div className="text-center px-4">
+                  <div className="text-muted-foreground mb-2">
                     <svg
                       className="w-16 h-16 mx-auto"
                       fill="none"
@@ -172,17 +174,17 @@ const LessonDisplay = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-500 font-medium">
+                  <p className="text-muted-foreground font-medium">
                     Nenhum slide disponível
                   </p>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-muted-foreground/80 text-sm">
                     Apresentação será disponibilizada em breve.
                   </p>
                 </div>
               </div>
             )}
           </div>
-          <div className="lesson-content bg-white rounded-lg shadow-sm p-8">
+          <div className="lesson-content bg-card text-card-foreground rounded-lg shadow-sm border border-border p-8">
             <ReactMarkdown>{lesson.content}</ReactMarkdown>
           </div>
         </div>
@@ -192,7 +194,7 @@ const LessonDisplay = () => {
 };
 
 const Header = () => (
-  <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6 md:hidden">
+  <header className="flex h-14 items-center gap-4 border-b border-border bg-card/80 backdrop-blur-sm px-4 lg:h-[60px] lg:px-6 md:hidden">
     <div className="flex-1">
       <SidebarTrigger variant="outline" size="icon">
         <Menu className="h-5 w-5" />
@@ -203,13 +205,13 @@ const Header = () => (
 );
 
 const Index = () => {
-  const lastAvailableLesson = [...lessonsData]
-    .reverse()
-    .find((lesson) => lesson.status === 'available');
+  const firstAvailableLesson = lessonsData.find(
+    (lesson) => lesson.status === 'available',
+  );
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen w-full bg-muted/40 justify-center">
+      <div className="flex min-h-screen w-full bg-background justify-center">
         <NavSidebar />
         <SidebarInset>
           <Header />
@@ -217,19 +219,19 @@ const Index = () => {
               <Route
                 path="/"
                 element={
-                  lastAvailableLesson ? (
+                  firstAvailableLesson ? (
                     <Navigate
-                      to={`/aula/${lastAvailableLesson.slug}`}
+                      to={`/aula/${firstAvailableLesson.slug}`}
                       replace
                     />
                   ) : (
-                    <div className="flex-1 flex min-w-40 items-center justify-center">
+                    <div className="flex-1 flex min-w-40 items-center justify-center bg-background px-4">
                       <div className="text-center">
-                        <p className="text-gray-600">
-                          No lessons available at this time.
+                        <p className="text-muted-foreground">
+                          Nenhuma aula disponível no momento.
                         </p>
-                        <p className="text-sm text-gray-400 mt-2">
-                          Debug: Found {lessonsData.length} lessons total
+                        <p className="text-sm text-muted-foreground/70 mt-2">
+                          Total no catálogo: {lessonsData.length}
                         </p>
                       </div>
                     </div>
