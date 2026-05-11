@@ -95,6 +95,10 @@
     @apply text-2xl font-semibold text-foreground mt-8 mb-4 pb-2 border-b border-border;
   }
 
+  .lesson-content h2:first-child {
+    @apply mt-0;
+  }
+
   .lesson-content h3 {
     @apply text-xl font-semibold text-foreground/95 mt-6 mb-3;
   }

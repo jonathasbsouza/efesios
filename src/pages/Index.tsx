@@ -46,6 +46,35 @@ const loadLessonsFromMarkdown = () => {
 
 const lessonsData = loadLessonsFromMarkdown();
 
+const splitMarkdownByH2 = (content: string) => {
+  const trimmedContent = content.trim();
+  if (!trimmedContent) {
+    return [];
+  }
+
+  const lines = trimmedContent.split('\n');
+  const sections: string[] = [];
+  let currentSection: string[] = [];
+
+  lines.forEach((line) => {
+    const isH2 = /^##\s+/.test(line.trim());
+
+    if (isH2 && currentSection.length > 0) {
+      sections.push(currentSection.join('\n').trim());
+      currentSection = [line];
+      return;
+    }
+
+    currentSection.push(line);
+  });
+
+  if (currentSection.length > 0) {
+    sections.push(currentSection.join('\n').trim());
+  }
+
+  return sections.filter(Boolean);
+};
+
 const NavSidebar = () => {
   const { setOpenMobile } = useSidebar();
 
@@ -106,6 +135,10 @@ const LessonDisplay = () => {
   const { slug } = useParams();
   const lesson = lessonsData.find((l) => l.slug === slug);
   const viewportRef = React.useRef<HTMLDivElement>(null);
+  const lessonSections = React.useMemo(
+    () => splitMarkdownByH2(lesson?.content ?? ''),
+    [lesson?.content],
+  );
 
   React.useEffect(() => {
     if (viewportRef.current) {
@@ -184,8 +217,15 @@ const LessonDisplay = () => {
               </div>
             )}
           </div>
-          <div className="lesson-content bg-card text-card-foreground rounded-lg shadow-sm border border-border p-8">
-            <ReactMarkdown>{lesson.content}</ReactMarkdown>
+          <div className="space-y-6">
+            {lessonSections.map((section, index) => (
+              <div
+                key={`${lesson.slug}-section-${index}`}
+                className="lesson-content bg-card text-card-foreground rounded-lg shadow-sm border border-border p-8"
+              >
+                <ReactMarkdown>{section}</ReactMarkdown>
+              </div>
+            ))}
           </div>
         </div>
       </ScrollArea>
