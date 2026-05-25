@@ -2,7 +2,7 @@
 title: 'Sabedoria e revelação (Ef 1:15–23)'
 order: 3
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vR1c6kpy5f4MGWzmZkdBLka53-iJc95Qvvw4dM776m3FytplmGonn2KPx5ImO9vWZuv545LcogrkokM/pubembed'
 ---
 
 ## Atividade
@@ -20,4 +20,3 @@ googleSlidesEmbedUrl: ''
 - [Cristo como Senhor e Cabeça da Igreja](https://blog.editoraculturacrista.com.br/cristo-como-senhor-e-cabeca-da-igreja/)
 - [O Senhor de tudo](https://theinvisiblecollege.com.br/o-senhor-de-tudo/)
 - [Os Batistas e sua tradição reformada](https://teologiabrasileira.com.br/os-batistas-e-sua-heranca-reformada/)
-- [A interface na relação do homem com o meio ambiente](https://theinvisiblecollege.com.br/a-interface-na-relacao-do-homem-com-o-meio-ambiente-uma-analise-das-cosmovisoes/)

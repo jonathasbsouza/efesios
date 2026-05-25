@@ -10,3 +10,4 @@ googleSlidesEmbedUrl: ''
 ## Palavras-chave
 
 ## Sugestões de leitura
+- [A unidade cristã como realidade espiritual](https://theinvisiblecollege.com.br/a-unidade-crista-como-realidade-espiritual/)
