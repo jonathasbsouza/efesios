@@ -14,7 +14,7 @@ import {
   SidebarInset,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
+import { Menu, ExternalLink } from 'lucide-react';
 
 // Make Buffer globally available for gray-matter
 if (typeof window !== 'undefined') {
@@ -223,7 +223,28 @@ const LessonDisplay = () => {
                 key={`${lesson.slug}-section-${index}`}
                 className="lesson-content bg-card text-card-foreground rounded-lg shadow-sm border border-border p-8"
               >
-                <ReactMarkdown>{section}</ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    a: ({ href, children }) => {
+                      const isExternal = href?.startsWith('http') || href?.startsWith('//');
+                      return (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="lesson-link"
+                        >
+                          {children}
+                          {isExternal && (
+                            <ExternalLink className="lesson-link-icon" aria-hidden="true" />
+                          )}
+                        </a>
+                      );
+                    },
+                  }}
+                >
+                  {section}
+                </ReactMarkdown>
               </div>
             ))}
           </div>

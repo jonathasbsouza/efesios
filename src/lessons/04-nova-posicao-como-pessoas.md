@@ -2,7 +2,7 @@
 title: 'Nova posição como pessoas (Ef 2:1–10)'
 order: 4
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQsDLksCIyaX8-QlOD_XF6aa7GeJ9Xj72kA3fmWiavWqUqW5ttqLbrZzTrAMJT-BDTRmNUCkMd2EWeM/pubembed'
 ---
 
 ## Atividade

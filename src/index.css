@@ -119,13 +119,34 @@
     @apply font-semibold text-foreground;
   }
 
-  .lesson-content a {
-    @apply hover:underline underline-offset-2 transition-colors duration-200;
+  .lesson-content a,
+  .lesson-link {
+    @apply underline underline-offset-2 inline-flex items-baseline gap-0.5;
     color: hsl(var(--lesson-accent));
+    background-image: linear-gradient(
+      hsl(var(--lesson-accent) / 0.25),
+      hsl(var(--lesson-accent) / 0.25)
+    );
+    background-size: 0% 85%;
+    background-repeat: no-repeat;
+    background-position: left 40%;
+    transition: background-size 0.2s ease, color 0.2s ease;
   }
 
-  .lesson-content a:hover {
+  .lesson-content a:hover,
+  .lesson-link:hover {
     color: hsl(var(--lesson-accent-hover));
+    background-size: 100% 85%;
+  }
+
+  .lesson-link-icon {
+    @apply inline-block flex-shrink-0;
+    width: 0.75em;
+    height: 0.75em;
+    vertical-align: middle;
+    position: relative;
+    top: -0.1em;
+    margin-left: 0.1em;
   }
 
   .lesson-content blockquote {
