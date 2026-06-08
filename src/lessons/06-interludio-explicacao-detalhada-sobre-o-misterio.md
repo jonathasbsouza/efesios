@@ -20,3 +20,10 @@ googleSlidesEmbedUrl: ''
 
 
 ## Sugestões de leitura
+
+- [Quem foi o apóstolo Paulo](https://coalizaopeloevangelho.org/article/quem-foi-o-apostolo-paulo/)
+- [O único que pode dizer: "você é suficiente"](https://coalizaopeloevangelho.org/article/o-unico-que-pode-dizer-voce-e-suficiente/)
+- [Escale as montanhas dos mistérios de Deus](https://voltemosaoevangelho.com/blog/2019/10/escale-as-montanhas-dos-misterios-de-deus/)
+- [The Outward Look and Feel of Humility](https://redeemercitytocity.com/articles-stories/the-outward-look-and-feel-of-humility)
+- [Dependência](https://ultimato.com.br/sites/john-stott/2017/09/26/dependencia/)
+- [O Plano da Promessa de Deus](https://farescamurcafurtado.wordpress.com/2017/03/11/resenha-10-o-plano-da-promessa-de-deus-walter-kaiser-jr/)
