@@ -2,7 +2,7 @@
 title: 'O mistério em Cristo (Ef 3:1–13)'
 order: 6
 status: 'available'
-googleSlidesEmbedUrl: ''
+googleSlidesEmbedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQ2oy0HybYRe7PkiDI-TyKLajajoHafLul2S8LFtHvRsxsA6gSuo55jGn2AHjEDPQ8kKnKyUtgXrsGs/pubembed'
 ---
 
 ## Atividade
